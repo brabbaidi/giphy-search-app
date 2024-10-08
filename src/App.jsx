@@ -26,12 +26,16 @@ function App() {
 
   useEffect(() => {
     fetchGifs(searchTerm);
-  }, [searchTerm]);
+  }, []);
 
   const handleSearch = (e) => {
     e.preventDefault();
     fetchGifs(searchTerm);
   };
+  const handleChange = (e) => {
+    setSearchTerm(e.target.value)
+  };
+
 
   if (loading) return <div className="loading"></div>;
   if (error) return <div>{error}</div>;
@@ -43,7 +47,9 @@ function App() {
         <input
           type="text"
           value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
+          //onChange={(e) => setSearchTerm(e.target.value)}
+          onChange={handleChange}
+
           placeholder="Search for GIFs"
         />
         <button type="submit">Search</button>
