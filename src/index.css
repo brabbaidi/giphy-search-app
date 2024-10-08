@@ -83,8 +83,10 @@ button:focus-visible {
 }
 /* Reduce the size of the GIFs */
 .gif-image {
-  max-width: 300px; /* Set max width */
-  max-height: 300px; /* Set max height */
+  min-width: 100px; /* Set max width */
+  min-height: 100px; /* Set max height */
   object-fit: cover; /* Optional: Keeps the aspect ratio */
   margin: 0 auto; /* Center the image */
+  max-width: 300px; /* Set max width */
+  max-height: 300px; /* Set max height */
 }
